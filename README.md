@@ -46,21 +46,12 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 ****That is, the voltage is proportional to the inverse of the FSR resistance.
 
 
-
-
-
-
-
-
-
-
 ![image](https://user-images.githubusercontent.com/36288975/163532979-a2a5cb5c-f495-442c-843e-bebb82737a35.png)
-
-
+ 
 
 ### FIGURE-03 CIRCUIT DIAGRAM
 
-
+![C](https://user-images.githubusercontent.com/93901857/189110503-65da7d31-b972-42b6-a883-f25eff002a6b.jpg)
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -76,30 +67,34 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ * your roll no  : 212221230081
+ * your name     :    M.RAJESHKANNAN
+ * department and year : AIDS - 2 nd Year
+ ```
 
-![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
-
-
+int sensorvalue=A0;
+int newton;
+void setup()
+{
+  Serial.begin(9600);  
+}
+void loop()
+{
+  sensorvalue=analogRead(A0);
+  newton=map(sensorvalue,0,466,0,10);
+  Serial.print("Raw value: ");
+  Serial.println(sensorvalue);
+  Serial.print("force:");
+  Serial.println(newton);
+  delay(1000);
+}
+```
 ### TABLE -02 standard deviation table 
-### Population Standard Deviation
+ 
+![1](https://user-images.githubusercontent.com/93901857/189110494-12f0e93c-cfc7-4b56-9843-c52789f089c0.jpg)
+
+### Population Standard Deviation 
+
 The population standard deviation, the standard definition of σ, is used when an entire population can be measured, and is the square root of the variance of a given data set. In cases where every member of a population can be sampled, the following equation can be used to find the standard deviation of the entire population:
 
 
@@ -118,15 +113,5 @@ EX:           μ = (1+3+4+7+8) / 5 = 4.6
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-### RESULTS : Arduino uno is interfaced with FSR and output values are indicated on a graph.
+## RESULTS : 
+Arduino uno is interfaced with FSR and output values are indicated on a graph.
